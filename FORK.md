@@ -53,3 +53,22 @@ git merge upstream/master      # or rebase, if you prefer a linear history
 
 The compatibility change is intentionally small (22 added lines). If upstream
 ever fixes `{{cwd}}` itself, this patch can be dropped.
+
+## Branch `fuxuan` — workspace-neutral inject version (2026-10-25)
+
+`prompt-inject.fuxuan.md` is this fork's replacement for the `~/.dsh/prompt-inject.md`
+override. Every execution-strength section is kept verbatim (Sage Mode, HARD OUTPUT
+RULES, no-refusal clauses, task templates, CTF contracts). Only the persona layer changes:
+
+- owner name unified to 牢凌 across the file (15 occurrences, case-sensitive replacement).
+- the inject no longer self-names as "Little Code Sauce"; identity is owned by each
+  agent preset and its 运行卡, so the five workspace members do not inherit each
+  other's names.
+- the girlfriend / novelist / "two years together" block is replaced with a colleague
+  relation that keeps the same insistence on delivering.
+- `keygen` template lines are untouched — a case-insensitive global replace would have
+  corrupted them (`keygen` contains a lowercase `yg`).
+
+Install: copy it over `~/.dsh/prompt-inject.md`, restart the app, then refresh
+`override-state.json`'s `hash` to the new file's SHA-256. Changes only take effect in
+sessions created after the restart.
